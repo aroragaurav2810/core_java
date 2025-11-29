@@ -9,8 +9,13 @@ public class PrimeNumber
         Scanner sc=new Scanner(System.in);
         while (true) {
             boolean isPrime=true;
-            System.out.println("Enter a number to check whether it is prime or not");
+            System.out.println("Enter a number to check whether it is prime or not. Press 0 to exit");
             int number = sc.nextInt();
+            switch (number)
+            {
+                case 0:
+                    System.exit(0);
+            }
             if(number==1)
             {
                 isPrime=false;
