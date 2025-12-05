@@ -1,11 +1,11 @@
-package interview_preparation_array_and_string_coding_set4;
+package interview_preparation_oops_and_core_java_coding_set4;
 
 import java.util.Scanner;
 
 public class BankAccount
 {
 
-
+    static double accountBalance=0;
     static void main()
     {
         BankAccount account=new BankAccount();
@@ -23,6 +23,7 @@ public class BankAccount
                     }
                     else
                     {
+                        System.out.println("Only these options are allowed");
                         System.out.println("Enter 1 to deposit money, Enter 2 to withdraw money, Enter 3 for checking balance, Enter 0 to exit");
                     }
                 } catch (Exception e) {
@@ -31,14 +32,19 @@ public class BankAccount
                     sc.next();
                 }
             }
+
             switch (option) {
                 case 0:
                     System.exit(0);
                 case 1:
-                    account.depositMoney();
+                    System.out.println("Enter the amount you want to deposit");
+                    double deposit_amount=sc.nextDouble();
+                    account.depositMoney(deposit_amount);
                     break;
                 case 2:
-                    account.withdrawMoney();
+                    System.out.println("Enter the amount you want to withdraw");
+                    double withdrawl_amount=sc.nextDouble();
+                    account.withdrawMoney(withdrawl_amount);
                     break;
                 case 3:
                     account.checkBalance();
@@ -50,19 +56,29 @@ public class BankAccount
         }
     }
 
-    public void depositMoney()
+    public void depositMoney(double amount)
     {
-        System.out.println("Deposit Money");
+        accountBalance=accountBalance+amount;
+        System.out.println("Account balance is "+accountBalance);
     }
 
-    public void withdrawMoney()
+    public void withdrawMoney(double amount)
     {
-        System.out.println("Withdraw Money");
+        if(accountBalance<amount)
+        {
+            System.out.println("Withdrawal amount is less than account balance");
+            System.out.println("Account balance is " + accountBalance);
+            System.out.println("Amount you are trying to withdraw is " + amount);
+        }
+        else {
+            accountBalance = accountBalance - amount;
+            System.out.println("Account balance is " + accountBalance);
+        }
     }
 
     public void checkBalance()
     {
-        System.out.println("Check Balance");
+        System.out.println("Account balance is "+accountBalance);
     }
 
 

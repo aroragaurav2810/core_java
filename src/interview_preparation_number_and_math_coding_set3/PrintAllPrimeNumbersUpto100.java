@@ -1,4 +1,4 @@
-package interview_preparation_array_and_string_coding_set3;
+package interview_preparation_number_and_math_coding_set3;
 
 import java.util.ArrayList;
 import java.util.List;
