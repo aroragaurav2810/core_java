@@ -1,6 +1,5 @@
-package interview_preparation_array_and_string_coding_set2;
+package interview_preparation_arrays_and_string_coding_set2;
 
-import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
